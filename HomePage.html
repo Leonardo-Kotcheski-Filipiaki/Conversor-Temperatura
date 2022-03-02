@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Css/Style.css"/>
+    <title>Eu gastei minha tarde nisso</title>
+</head>
+<body>
+    <div>
+        <h1>Conversor de Temperatura</h1>
+        <form>
+            <label>Origem</label>
+            <select id="Seletor-Origem">
+                <option value = "1">Celsius</option>
+                <option value = "2">Fahrenheit</option>
+                <option value = "3">Kelvin</option>
+                <option value = "4">Rankine</option>
+            </select>
+            <label>Final</label>
+            <select id="Seletor-Final">
+                <option value = "1">Celsius</option>
+                <option value = "2">Fahrenheit</option>
+                <option value = "3">Kelvin</option>
+                <option value = "4">Rankine</option>
+            </select>
+            <label for="Temperatura">Temperatura:</label>
+            <input id="Temperatura" placeholder="Digite a temperatura!"></input>
+            <br/>
+            <button id="Converter" onclick="converter()">Converter</button>
+            <label for="Resultado">Resultado</label>
+            <input id="Resultado"></input>
+        </form>
+
+    </div>
+    
+</body>
+<script >
+    function converter(){
+        event.preventDefault()
+    var valortemperatura = document.getElementById('Temperatura').value
+    var seletororigem = document.getElementById('Seletor-Origem').value
+    var seletorfinal = document.getElementById('Seletor-Final').value
+    var valorresultado = 0
+    //Celcius
+    if(seletororigem == '1' && seletorfinal == '2'){ // Celsius to Fahrenheit
+        valorresultado = (parseFloat(valortemperatura * 1.8)+32) // funfando
+    }else if (seletororigem == '1' && seletorfinal == '3'){ // Celsius to Kelvin
+        valorresultado = (parseFloat(valortemperatura)+273) // funfando
+    }else if (seletororigem == '1' && seletorfinal == '4'){ // Celsius to Rankine
+        valorresultado = (parseFloat(valortemperatura)+273.15)*1.8 // funfando    
+    }else if (seletororigem == '1' && seletorfinal == '1'){ // Celsius to Celsius
+        valorresultado = (parseFloat(valortemperatura)) // funfando
+    //Fahrenheit
+    }else if(seletororigem == '2' && seletorfinal == '1'){ // Fahrenheit to Celsius
+        valorresultado = (parseFloat(valortemperatura -32)/1.8) // funfando
+    }else if (seletororigem == '2' && seletorfinal == '3'){ // Fahrenheit to Kelvin
+        valorresultado = (parseFloat(valortemperatura - 32)* 5/9)+273.15 // funfando
+    }else if (seletororigem == '2' && seletorfinal == '4'){ // Fahrenheit to Rankine
+        valorresultado = (parseFloat(valortemperatura)+459.67) // funfando
+    }else if (seletororigem == '2' && seletorfinal == '2'){ // Fahrenheit to Fahrenheit
+        valorresultado = (parseFloat(valortemperatura)) // fufando
+    //Kelvin
+    }else if(seletororigem == '3' && seletorfinal == '1'){ // Kelvin to Celsius
+        valorresultado = (parseFloat(valortemperatura)-273) // funfando
+    }else if(seletororigem == '3' && seletorfinal == '2'){ // Kelvin to Fahrenheit
+        valorresultado = (parseFloat(valortemperatura -273)*1.8)+32 // funfando
+    }else if(seletororigem == '3' && seletorfinal == '4'){ // Kelvin to Rankine
+        valorresultado = (parseFloat(valortemperatura)*1.8) // funfando
+    }else if(seletororigem == '3' && seletorfinal == '3'){ // Kelvin to Kelvin
+        valorresultado = (parseFloat(valortemperatura)) // funfando
+    //Rankine
+    }else if (seletororigem == '4' && seletorfinal == '1'){ // Rankine to Celsius
+        valorresultado = (parseFloat(valortemperatura - 491,67)*5/9) // funfando
+    }else if (seletororigem == '4' && seletorfinal == '2'){ // Rankine to Fahrenheit
+        valorresultado = (parseFloat(valortemperatura - 459.67)) // funfando
+    }else if (seletororigem == '4' && seletorfinal == '3'){ // Rankine to Kelvin
+        valorresultado = (parseFloat(valortemperatura)/1.8) //funfando
+    }else if (seletororigem == '4' && seletorfinal == '4'){ // Rankine to Rankine
+        valorresultado = (parseFloat(valortemperatura))
+    }
+    document.getElementById('Resultado').value = valorresultado.toFixed(1)// Output of Resultado
+}
+
+</script>
+</html>
