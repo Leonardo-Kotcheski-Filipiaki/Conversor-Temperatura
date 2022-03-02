@@ -18,18 +18,20 @@
                 <option value = "3">Kelvin</option>
                 <option value = "4">Rankine</option>
             </select>
-            <label>Final</label>
-            <select id="Seletor-Final">
+            <div id="Final">
+                <label>Final</label>
+                <select id="Seletor-Final">
                 <option value = "1">Celsius</option>
                 <option value = "2">Fahrenheit</option>
                 <option value = "3">Kelvin</option>
                 <option value = "4">Rankine</option>
-            </select>
-            <label for="Temperatura">Temperatura:</label>
+                </select>
+            </div>
+            <br/><label for="Temperatura">Temperatura:</label>
             <input id="Temperatura" placeholder="Digite a temperatura!"></input>
             <br/>
-            <button id="Converter" onclick="converter()">Converter</button>
             <label for="Resultado">Resultado</label>
+            <button id="Converter" onclick="converter()">Converter</button>
             <input id="Resultado"></input>
         </form>
 
@@ -84,4 +86,5 @@
 }
 
 </script>
+
 </html>
